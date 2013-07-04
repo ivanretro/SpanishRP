@@ -10,5 +10,6 @@ Things to do:
 - Add entities
 - Fix modules
 - Change FAdmin jails (use NP jails instead)
+- Create new HUD
 
 That's all for now.
