@@ -18,7 +18,7 @@ local function MsgDoVote(msg)
 	LocalPlayer():EmitSound("Town.d1_town_02_elevbell1", 100, 100)
 	local panel = vgui.Create("DFrame")
 	panel:SetPos(3 + PanelNum, chatY - 145)
-	panel:SetTitle("Vote")
+	panel:SetTitle(LANGUAGE.vote)
 	panel:SetSize(140, 140)
 	panel:SetSizable(false)
 	panel.btnClose:SetVisible(false)
@@ -41,7 +41,7 @@ local function MsgDoVote(msg)
 	end
 
 	function panel:Think()
-		self:SetTitle("Time: ".. tostring(math.Clamp(math.ceil(timeleft - (CurTime() - OldTime)), 0, 9999)))
+		self:SetTitle(LANGUAGE.time.. tostring(math.Clamp(math.ceil(timeleft - (CurTime() - OldTime)), 0, 9999)))
 		if timeleft - (CurTime() - OldTime) <= 0 then
 			panel:Close()
 		end
@@ -78,7 +78,7 @@ local function MsgDoVote(msg)
 	ybutton:SetPos(25, panel:GetTall() - 25)
 	ybutton:SetSize(40, 20)
 	ybutton:SetCommand("!")
-	ybutton:SetText("Yes")
+	ybutton:SetText(LANGUAGE.ans_yes)
 	ybutton:SetVisible(true)
 	ybutton.DoClick = function()
 		LocalPlayer():ConCommand("vote " .. voteid .. " yea\n")
@@ -90,7 +90,7 @@ local function MsgDoVote(msg)
 	nbutton:SetPos(70, panel:GetTall() - 25)
 	nbutton:SetSize(40, 20)
 	nbutton:SetCommand("!")
-	nbutton:SetText("No")
+	nbutton:SetText(LANGUAGE.ans_no)
 	nbutton:SetVisible(true)
 	nbutton.DoClick = function()
 		LocalPlayer():ConCommand("vote " .. voteid .. " nay\n")
@@ -149,7 +149,7 @@ local function MsgDoQuestion(msg)
 	end
 
 	function panel:Think()
-		self:SetTitle("Time: ".. tostring(math.Clamp(math.ceil(timeleft - (CurTime() - OldTime)), 0, 9999)))
+		self:SetTitle(LANGUAGE.time.. tostring(math.Clamp(math.ceil(timeleft - (CurTime() - OldTime)), 0, 9999)))
 		if timeleft - (CurTime() - OldTime) <= 0 then
 			panel:Close()
 		end
@@ -172,7 +172,7 @@ local function MsgDoQuestion(msg)
 	ybutton:SetParent(panel)
 	ybutton:SetPos(105, 100)
 	ybutton:SetSize(40, 20)
-	ybutton:SetText("Yes")
+	ybutton:SetText(LANGUAGE.ans_yes)
 	ybutton:SetVisible(true)
 	ybutton.DoClick = function()
 		LocalPlayer():ConCommand("ans " .. quesid .. " 1\n")
@@ -183,7 +183,7 @@ local function MsgDoQuestion(msg)
 	nbutton:SetParent(panel)
 	nbutton:SetPos(155, 100)
 	nbutton:SetSize(40, 20)
-	nbutton:SetText("No")
+	nbutton:SetText(LANGUAGE.ans_no)
 	nbutton:SetVisible(true)
 	nbutton.DoClick = function()
 		LocalPlayer():ConCommand("ans " .. quesid .. " 2\n")
@@ -268,11 +268,11 @@ local function ChangeJobVGUI()
 		F4Menu:Center()
 		F4Menu:SetVisible( true )
 		F4Menu:MakePopup()
-		F4Menu:SetTitle("Options menu")
-		GAMEMODE:addF4MenuTab("Money/Commands", GAMEMODE:MoneyTab(), "icon16/money.png")
-		GAMEMODE:addF4MenuTab("Jobs", GAMEMODE:JobsTab(), "icon16/user_suit.png")
-		GAMEMODE:addF4MenuTab("Entities/weapons", GAMEMODE:EntitiesTab(), "icon16/cart.png")
-		GAMEMODE:addF4MenuTab("HUD", GAMEMODE:RPHUDTab(), "icon16/camera.png")
+		F4Menu:SetTitle(LANGUAGE.menu_options)
+		GAMEMODE:addF4MenuTab(LANGUAGE.menu_money, GAMEMODE:MoneyTab(), "icon16/money.png")
+		GAMEMODE:addF4MenuTab(LANGUAGE.menu_jobs, GAMEMODE:JobsTab(), "icon16/user_suit.png")
+		GAMEMODE:addF4MenuTab(LANGUAGE.menu_ents, GAMEMODE:EntitiesTab(), "icon16/cart.png")
+		GAMEMODE:addF4MenuTab(LANGUAGE.menu_hud, GAMEMODE:RPHUDTab(), "icon16/camera.png")
 
 		hook.Call("F4MenuTabs", nil)
 		F4Menu:SetSkin(GAMEMODE.Config.DarkRPSkin)
@@ -351,7 +351,7 @@ local function KeysMenu(um)
 	if Vehicle then
 		Entiteh = "vehicle"
 	end
-	Frame:SetTitle(Entiteh .. " options")
+	Frame:SetTitle(LANGUAGE.menu_options .. LANGUAGE.of .. Entiteh)
 
 	function Frame:Close()
 		KeyFrameVisible = false
@@ -364,13 +364,13 @@ local function KeysMenu(um)
 		local Owndoor = vgui.Create("DButton", Frame)
 		Owndoor:SetPos(10, 30)
 		Owndoor:SetSize(180, 100)
-		Owndoor:SetText("Sell " .. Entiteh)
+		Owndoor:SetText(LANGUAGE.sell .. Entiteh)
 		Owndoor.DoClick = function() RunConsoleCommand("darkrp", "/toggleown") Frame:Close() end
 
 		local AddOwner = vgui.Create("DButton", Frame)
 		AddOwner:SetPos(10, 140)
 		AddOwner:SetSize(180, 100)
-		AddOwner:SetText("Add owner")
+		AddOwner:SetText(LANGUAGE.add_owner)
 		AddOwner.DoClick = function()
 			local menu = DermaMenu()
 			menu.found = false
@@ -381,7 +381,7 @@ local function KeysMenu(um)
 				end
 			end
 			if not menu.found then
-				menu:AddOption("Noone available", function() end)
+				menu:AddOption(LANGUAGE.noone, function() end)
 			end
 			menu:Open()
 		end
@@ -389,7 +389,7 @@ local function KeysMenu(um)
 		local RemoveOwner = vgui.Create("DButton", Frame)
 		RemoveOwner:SetPos(10, 250)
 		RemoveOwner:SetSize(180, 100)
-		RemoveOwner:SetText("Remove owner")
+		RemoveOwner:SetText(LANGUAGE.del_owner)
 		RemoveOwner.DoClick = function()
 			local menu = DermaMenu()
 			for k,v in pairs(player.GetAll()) do
@@ -399,7 +399,7 @@ local function KeysMenu(um)
 				end
 			end
 			if not menu.found then
-				menu:AddOption("Noone available", function() end)
+				menu:AddOption(LANGUAGE.noone, function() end)
 			end
 			menu:Open()
 		end

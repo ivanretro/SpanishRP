@@ -2,6 +2,8 @@ local rp_languages = {}
 
 // Spanish
 rp_languages.spanish = {
+	-- Admin things
+	need_admin = "Necesitas privilegios de administrador para poder %s",
 	need_sadmin = "Necesitas privilegios de superadministrador para poder %s",
 	no_jail_pos = "No hay celdas actualmente",
 	invalid_x = "Invalido %s! %s",
@@ -42,37 +44,37 @@ rp_languages.spanish = {
 	wanted_expired = "%s ya no se encuentra en busca y captura",
 	rpname_changed = "%s cambio su nombre por: %s",
 
-/*
 	-- Disasters
-	zombie_approaching = "WARNING: Zombies are approaching!",
-	zombie_leaving = "Zombies are leaving.",
-	zombie_spawn_not_exist = "Zombie Spawn %s does not exist.",
-	zombie_spawn_removed = "You have removed this zombie spawn.",
-	zombie_spawn_added = "You have added a zombie spawn.",
-	zombie_maxset = "Maximum amount of zombies is now set to %s",
-	zombie_enabled = "Zombies are now enabled.",
-	zombie_disabled = "Zombies are now disabled.",
-	meteor_approaching = "WARNING: Meteor storm approaching!",
-	meteor_passing = "Meteor storm passing.",
-	meteor_enabled = "Meteor Storms are now enabled.",
-	meteor_disabled = "Meteor Storms are now disabled.",
-	earthquake_report = "Earthquake reported of magnitude %sMw",
-	earthtremor_report = "Earth tremor reported of magnitude %sMw",
+	zombie_approaching = "ATENCION: Los zombis se acercan!",
+	zombie_leaving = "Los zombis han huido",
+	zombie_spawn_not_exist = "El spawn de zombis %s no existe",
+	zombie_spawn_removed = "Has eliminado este spawn de zombis",
+	zombie_spawn_added = "Has agregado un spawn de zombis",
+	zombie_maxset = "El maximo de zombis se a colocado a %s",
+	zombie_enabled = "Los zombis han sido activados",
+	zombie_disabled = "Los Zombis han sido desactivados",
+	meteor_approaching = "ATENCION: una lluvida de meteoritos se acerca!",
+	meteor_passing = "La lluvia de meteoritos ha terminado",
+	meteor_enabled = "Las lluvias de meteoritos se han activado",
+	meteor_disabled = "Las lluvias de meteoritos se han desactivado",
+	earthquake_report = "El ultimo terremoto tuvo una fuerza de %sMw",
+	earthtremor_report = "El ultimo temblor de tierra tuvo una fuerza de %sMw",
 
 	-- Keys, vehicles and doors
-	keys_allowed_to_coown = "You are allowed to co-own this\n(Press Reload with keys or press F2 to co-own)\n",
-	keys_other_allowed = "Allowed to co-own:\n",
-	keys_allow_ownership = "(Press Reload with keys or press F2 to allow ownership)",
-	keys_disallow_ownership = "(Press Reload with keys or press F2 to disallow ownership)",
-	keys_owned_by = "Owned by: ",
-	keys_cops_and_mayor = "All cops and the mayor",
-	keys_unowned = "Unowned\n(Press Reload with keys or press F2 to own)",
-	keys_everyone = "(Press Reload with keys or press F2 to enable for everyone)",
-	keys_cops = "(Press Reload with keys or press F2 to set to cops and mayor only)",
-	door_unown_arrested = "You can not own or unown things while arrested!",
-	door_unownable = "This door cannot be owned or unowned!",
-	door_sold = "You have sold this for %s",
-	door_already_owned = "This door is already owned by someone!",
+	keys_allowed_to_coown = "Se le permite ser co-propietario de esto\n(Presione Recargar con las llaves o presiona F2 para ser co-propietario)\n",
+	keys_other_allowed = "Co-propietarios:\n",
+	keysallow_ownership = "(Presiona Recargar con las llaves o presiona F2 para permitir la propiedad)",
+	Keys_disallow_ownership = "(Presiona Recargar con las llaves o presiona F2 para no permitir la propiedad)",
+	keys_owned_by = "Propiedad de:",
+	keys_cops_and_mayor = "Todos los agentes de policia y el Sr.Alcalde",
+	Keys_unowned = "Sin propiedad\n(Presiona Recargar con las llaves o presiona F2 para comprar)",
+	Keys_everyone = "(Presiona Recargar con las llaves o presiona F2 para activar para todo el mundo)",
+	keys_cops = "(Presiona Recargar con las llaves o presiona F2 para permitir solo a agentes de policia y el alcalde",
+	door_unown_arrested = "No puedes apropiarte o expropiarte cosas mientras estas arrestado!",
+	door_unownable = "Esta puerta no se puede comprar o vender!",
+	door_sold 0 "Has vendido esta puerta por un valor de %s",
+	door_already_owned = "Esta puerta esta comprada por",
+/*
 	door_cannot_afford = "You can not afford this door!",
 	door_hobo_unable = "You can not buy a door if you are a hobo!",
 	vehicle_cannot_afford = "You can not afford this vehicle!",
@@ -83,6 +85,7 @@ rp_languages.spanish = {
 	door_add_owners_unownable = "You can not add owners if a door is non-ownable!",
 	rp_addowner_already_owns_door = "%s already owns (or is already allowed to own) this door!",
 */
+
 	need_to_be_before = "Necesitas ser %s para ser %s",
 	need_to_make_vote = "Necesitas hacer una votacion para ser %s!",
 	team_limit_reached = "No puedes ser %s porque ya se ha llegado al limite",
@@ -239,8 +242,48 @@ rp_languages.spanish = {
 	"/agenda <Message> Sets the Gangsters' agenda. Use // to go to the next line."},
 
 /* BLOCK 5 END (Estutes) */
+	-- Aux
+	vote = "Votar",
+	not_vote = "No votar",
+	ans_yes = "Si",
+	ans_no = "No",
+
+	of = " de ",
+	time = "Tiempo: ",
+	noone = "Nadie disponible",
+	money = "Dinero",
+	actions = "Acciones",
+	reset = "Reiniciar",
+
+	-- Menu options
+	sell = "Vender",
+	buy_a = "Comprar un ",
+
+	add_owner = "Agregar propietario",
+	del_owner = "Eliminar propietario",
+	sell_doors = "Vender todas tus puertas",
+
+	-- Menu titles
+	menu_options = "Opciones",
+	menu_money = "Dinero/Comandos",
+	menu_jobs = "Trabajos",
+	menu_ents = "Entidades/armas",
+	menu_hud = "HUD",
+
+	menu_mayor = "Opciones de Alcalde",
+	menu_police = "Opciones de Policia",
+	menu_citizen = "Opciones de Ciudadano",
+	menu_mobboss = "Opciones del Don",
+
+	menu_model = "Elegir modelo",
+	menu_ammo = "Municion",
+	menu_weapons = "Armas",
+	menu_shipments = "Equipamientos",
+	menu_ent = "Entidades",
+	menu_vehicles = "Vehiculos",
 }
 
+// English
 rp_languages.english = {
 	-- Admin things
 	need_admin = "You need admin privileges in order to be able to %s",
