@@ -407,18 +407,18 @@ local function KeysMenu(um)
 		local DoorTitle = vgui.Create("DButton", Frame)
 		DoorTitle:SetPos(10, 360)
 		DoorTitle:SetSize(180, 100)
-		DoorTitle:SetText("Set "..Entiteh.." title")
+		DoorTitle:SetText(string.format(LANGUAGE.set_x_title, Entiteh))
 		if not trace.Entity:IsMasterOwner(LocalPlayer()) then
 			RemoveOwner.m_bDisabled = true
 		end
 		DoorTitle.DoClick = function()
-			Derma_StringRequest("Set door title", "Set the title of the "..Entiteh.." you're looking at", "", function(text)
+			Derma_StringRequest(string.format(LANGUAGE.set_x_title, LANGUAGE.door), string.format(LANGUAGE.set_x_title2, Entiteh), "", function(text)
 				LocalPlayer():ConCommand("darkrp /title ".. text)
 				if ValidPanel(Frame) then
 					Frame:Close()
 				end
 			end,
-			function() end, "OK!", "CANCEL!")
+			function() end, "OK!", LANGUAGE.cancel_upper)
 		end
 
 		if (FAdmin and FAdmin.Access.PlayerHasPrivilege(LocalPlayer(), "rp_doorManipulation") or LocalPlayer():IsAdmin()) and not Vehicle then
@@ -426,15 +426,15 @@ local function KeysMenu(um)
 			local SetCopsOnly = vgui.Create("DButton", Frame)
 			SetCopsOnly:SetPos(10, Frame:GetTall() - 110)
 			SetCopsOnly:SetSize(180, 100)
-			SetCopsOnly:SetText("Edit Door Group")
+			SetCopsOnly:SetText(string.format(LANGUAGE.set_x_title, LANGUAGE.team_door))
 			SetCopsOnly.DoClick = function()
 				local menu = DermaMenu()
-				local groups = menu:AddSubMenu("Door Groups")
-				local teams = menu:AddSubMenu("Jobs")
-				local add = teams:AddSubMenu("Add")
-				local remove = teams:AddSubMenu("Remove")
+				local groups = menu:AddSubMenu(LANGUAGE.team_doors)
+				local teams = menu:AddSubMenu(LANGUAGE.menu_jobs)
+				local add = teams:AddSubMenu(LANGUAGE.add)
+				local remove = teams:AddSubMenu(LANGUAGE.del)
 
-				menu:AddOption("None", function() RunConsoleCommand("darkrp", "/togglegroupownable") Frame:Close() end)
+				menu:AddOption(LANGUAGE.none, function() RunConsoleCommand("darkrp", "/togglegroupownable") Frame:Close() end)
 				for k,v in pairs(RPExtraTeamDoors) do
 					groups:AddOption(k, function() RunConsoleCommand("darkrp", "/togglegroupownable", k) Frame:Close() end)
 				end
@@ -458,7 +458,7 @@ local function KeysMenu(um)
 			local Owndoor = vgui.Create("DButton", Frame)
 			Owndoor:SetPos(10, 30)
 			Owndoor:SetSize(180, 100)
-			Owndoor:SetText("Buy " .. Entiteh)
+			Owndoor:SetText(LANGUAGE.buy_a .. Entiteh)
 			Owndoor.DoClick = function() RunConsoleCommand("darkrp", "/toggleown") Frame:Close() end
 		end
 
@@ -472,21 +472,21 @@ local function KeysMenu(um)
 			local DisableOwnage = vgui.Create("DButton", Frame)
 			DisableOwnage:SetPos(10, Frame:GetTall() - 220)
 			DisableOwnage:SetSize(180, 100)
-			DisableOwnage:SetText("Disallow ownership")
+			DisableOwnage:SetText(ANGUAGE.del_ownership)
 			DisableOwnage.DoClick = function() Frame:Close() RunConsoleCommand("darkrp", "/toggleownable") end
 
 			local SetCopsOnly = vgui.Create("DButton", Frame)
 			SetCopsOnly:SetPos(10, Frame:GetTall() - 110)
 			SetCopsOnly:SetSize(180, 100)
-			SetCopsOnly:SetText("Edit Door Group")
+			SetCopsOnly:SetText(string.format(LANGUAGE.set_x_title, LANGUAGE.team_door))
 			SetCopsOnly.DoClick = function()
 				local menu = DermaMenu()
-				local groups = menu:AddSubMenu("Door Groups")
-				local teams = menu:AddSubMenu("Jobs")
-				local add = teams:AddSubMenu("Add")
-				local remove = teams:AddSubMenu("Remove")
+				local groups = menu:AddSubMenu(LANGUAGE.team_doors)
+				local teams = menu:AddSubMenu(LANGUAGE.menu_jobs)
+				local add = teams:AddSubMenu(LANGUAGE.add)
+				local remove = teams:AddSubMenu(LANGUAGE.del)
 
-				menu:AddOption("None", function() RunConsoleCommand("darkrp", "/togglegroupownable") Frame:Close() end)
+				menu:AddOption(LANGUAGE.none, function() RunConsoleCommand("darkrp", "/togglegroupownable") Frame:Close() end)
 				for k,v in pairs(RPExtraTeamDoors) do
 					groups:AddOption(k, function() RunConsoleCommand("darkrp", "/togglegroupownable", k) Frame:Close() end)
 				end

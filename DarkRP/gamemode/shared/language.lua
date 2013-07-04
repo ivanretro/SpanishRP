@@ -247,20 +247,33 @@ rp_languages.spanish = {
 	not_vote = "No votar",
 	ans_yes = "Si",
 	ans_no = "No",
+	cancel_upper = "CANCELAR!",
+
+	none = "Nada",
+	noone = "Nadie disponible",
 
 	of = " de ",
 	time = "Tiempo: ",
-	noone = "Nadie disponible",
 	money = "Dinero",
 	actions = "Acciones",
 	reset = "Reiniciar",
+	door = "puerta",
+	team_door = "puerta de trabajo",
+	team_doors = "Puertas de Trabajo",
+
+	-- Formatted
+	set_x_title = "Poner titulo a %s",
+	set_x_title2 = "Poner titulo a %s que estas mirando",
 
 	-- Menu options
 	sell = "Vender",
 	buy_a = "Comprar un ",
 
+	add = "Agregar",
+	del = "Eliminar",
 	add_owner = "Agregar propietario",
 	del_owner = "Eliminar propietario",
+	del_ownership = "Eliminar permiso de compra",
 	sell_doors = "Vender todas tus puertas",
 
 	-- Menu titles
