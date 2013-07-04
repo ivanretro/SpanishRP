@@ -1,7 +1,8 @@
-"darkrp"
+//"darkrp"
+"Gamemode"
 {
 	"base"		"sandbox"
-    "title"  "SpanishRP"
+    "title"  "DarkRP"
     "version"   "4.0.0"
     "menusystem"	"1"
 
