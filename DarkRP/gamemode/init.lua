@@ -47,6 +47,8 @@ AddCSLuaFile("ammotypes.lua")
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("config.lua")
 
+AddCSLuaFile("shared/language.lua")
+
 AddCSLuaFile("client/cl_chatlisteners.lua")
 AddCSLuaFile("client/DRPDermaSkin.lua")
 AddCSLuaFile("client/help.lua")
@@ -59,7 +61,7 @@ AddCSLuaFile("shared/player_class.lua")
 AddCSLuaFile("shared/animations.lua")
 AddCSLuaFile("shared/commands.lua")
 AddCSLuaFile("shared/entity.lua")
-AddCSLuaFile("shared/language.lua")
+//AddCSLuaFile("shared/language.lua")
 AddCSLuaFile("shared/MakeThings.lua")
 AddCSLuaFile("shared/Workarounds.lua")
 

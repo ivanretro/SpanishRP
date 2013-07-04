@@ -72,7 +72,7 @@ rp_languages.spanish = {
 	keys_cops = "(Presiona Recargar con las llaves o presiona F2 para permitir solo a agentes de policia y el alcalde",
 	door_unown_arrested = "No puedes apropiarte o expropiarte cosas mientras estas arrestado!",
 	door_unownable = "Esta puerta no se puede comprar o vender!",
-	door_sold 0 "Has vendido esta puerta por un valor de %s",
+	door_sold = "Has vendido esta puerta por un valor de %s",
 	door_already_owned = "Esta puerta esta comprada por",
 /*
 	door_cannot_afford = "You can not afford this door!",
