@@ -1,6 +1,6 @@
-GM.Version = "2.4.3"
-GM.Name = "DarkRP"
-GM.Author = "By Rickster, Updated: Pcwizdan, Sibre, philxyz, [GNC] Matt, Chrome Bolt, FPtje Falco, Eusion, Drakehawke"
+GM.Version = "4.0.0"
+GM.Name = "SpanishRP"
+GM.Author = "By Team Clon"
 
 -- RP Name Overrides
 

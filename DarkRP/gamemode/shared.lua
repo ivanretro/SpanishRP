@@ -1,7 +1,7 @@
 /*--------------------------------------------------------
 Default teams. If you make a team above the citizen team, people will spawn with that team!
 --------------------------------------------------------*/
-TEAM_CITIZEN = AddExtraTeam("Citizen", {
+TEAM_CITIZEN = AddExtraTeam("Ciudadano", {
 	color = Color(20, 150, 20, 255),
 	model = {
 		"models/player/Group01/Female_01.mdl",
@@ -25,37 +25,14 @@ TEAM_CITIZEN = AddExtraTeam("Citizen", {
 	weapons = {},
 	command = "citizen",
 	max = 0,
-	salary = 45,
+	salary = 40,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
 	candemote = false
 })
 
-TEAM_POLICE = AddExtraTeam("Civil Protection", {
-	color = Color(25, 25, 170, 255),
-	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
-	description = [[The protector of every citizen that lives in the city .
-		You have the power to arrest criminals and protect innocents.
-		Hit them with your arrest baton to put them in jail
-		Bash them with a stunstick and they might learn better than to disobey
-		the law.
-		The Battering Ram can break down the door of a criminal with a warrant
-		for his/her arrest.
-		The Battering Ram can also unfreeze frozen props(if enabled).
-		Type /wanted <name> to alert the public to this criminal
-		OR go to tab and warrant someone by clicking the warrant button]],
-	weapons = {"arrest_stick", "unarrest_stick", "weapon_glock2", "stunstick", "door_ram", "weaponchecker"},
-	command = "cp",
-	max = 4,
-	salary = 65,
-	admin = 0,
-	vote = true,
-	hasLicense = true,
-	help = LANGUAGE.cophelp
-})
-
-TEAM_GANG = AddExtraTeam("Gangster", {
+TEAM_GANG = AddExtraTeam("Mafioso", {
 	color = Color(75, 75, 75, 255),
 	model = {
 		"models/player/Group03/Female_01.mdl",
@@ -77,14 +54,14 @@ TEAM_GANG = AddExtraTeam("Gangster", {
 		The Mobboss sets your agenda and you follow it or you might be punished.]],
 	weapons = {},
 	command = "gangster",
-	max = 3,
+	max = 6, // A big mafia
 	salary = 45,
 	admin = 0,
 	vote = false,
 	hasLicense = false
 })
 
-TEAM_MOB = AddExtraTeam("Mob boss", {
+TEAM_MOB = AddExtraTeam("El Don", {
 	color = Color(25, 25, 25, 255),
 	model = "models/player/gman_high.mdl",
 	description = [[The Mobboss is the boss of the criminals in the city.
@@ -102,7 +79,7 @@ TEAM_MOB = AddExtraTeam("Mob boss", {
 	help = LANGUAGE.bosshelp
 })
 
-TEAM_GUN = AddExtraTeam("Gun Dealer", {
+TEAM_GUN = AddExtraTeam("Vendedor de Armas", {
 	color = Color(255, 140, 0, 255),
 	model = "models/player/monk.mdl",
 	description = [[A gun dealer is the only person who can sell guns to other
@@ -113,14 +90,14 @@ TEAM_GUN = AddExtraTeam("Gun Dealer", {
 		/Buygunlab to Buy a gunlab that spawns P228 pistols]],
 	weapons = {},
 	command = "gundealer",
-	max = 2,
-	salary = 45,
+	max = 1, // This is only a roleplay game, not a fps
+	salary = 30, // Sell guns, doesn't need much salary
 	admin = 0,
 	vote = false,
 	hasLicense = false
 })
 
-TEAM_MEDIC = AddExtraTeam("Medic", {
+TEAM_MEDIC = AddExtraTeam("Doctor", {
 	color = Color(47, 79, 79, 255),
 	model = "models/player/kleiner.mdl",
 	description = [[With your medical knowledge,
@@ -131,14 +108,37 @@ TEAM_MEDIC = AddExtraTeam("Medic", {
 		Right click with the Medical Kit to heal yourself.]],
 	weapons = {"med_kit"},
 	command = "medic",
-	max = 3,
+	max = 2, // In fact should be only one
 	salary = 45,
 	admin = 0,
 	vote = false,
 	hasLicense = false
 })
 
-TEAM_CHIEF = AddExtraTeam("Civil Protection Chief", {
+TEAM_POLICE = AddExtraTeam("Policia", {
+	color = Color(25, 25, 170, 255),
+	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
+	description = [[The protector of every citizen that lives in the city .
+		You have the power to arrest criminals and protect innocents.
+		Hit them with your arrest baton to put them in jail
+		Bash them with a stunstick and they might learn better than to disobey
+		the law.
+		The Battering Ram can break down the door of a criminal with a warrant
+		for his/her arrest.
+		The Battering Ram can also unfreeze frozen props(if enabled).
+		Type /wanted <name> to alert the public to this criminal
+		OR go to tab and warrant someone by clicking the warrant button]],
+	weapons = {"arrest_stick", "unarrest_stick", "weapon_glock2", "stunstick", "door_ram", "weaponchecker"},
+	command = "cp",
+	max = 6, // Enough to combat gangsters
+	salary = 70,
+	admin = 0,
+	vote = false, // OMG this is a security job
+	hasLicense = true,
+	help = LANGUAGE.cophelp
+})
+
+TEAM_CHIEF = AddExtraTeam("Comisario", {
 	color = Color(20, 20, 255, 255),
 	model = "models/player/combine_soldier_prisonguard.mdl",
 	description = [[The Chief is the leader of the Civil Protection unit.
@@ -153,15 +153,15 @@ TEAM_CHIEF = AddExtraTeam("Civil Protection Chief", {
 	weapons = {"arrest_stick", "unarrest_stick", "weapon_deagle2", "stunstick", "door_ram", "weaponchecker"},
 	command = "chief",
 	max = 1,
-	salary = 75,
+	salary = 90,
 	admin = 0,
-	vote = false,
+	vote = true, // This is an important boss in the city
 	hasLicense = true,
 	NeedToChangeFrom = TEAM_POLICE,
 	help = LANGUAGE.cophelp
 })
 
-TEAM_MAYOR = AddExtraTeam("Mayor", {
+TEAM_MAYOR = AddExtraTeam("Alcalde", {
 	color = Color(150, 20, 20, 255),
 	model = "models/player/breen.mdl",
 	description = [[The Mayor of the city creates laws to serve the greater good
@@ -176,14 +176,14 @@ TEAM_MAYOR = AddExtraTeam("Mayor", {
 	weapons = {},
 	command = "mayor",
 	max = 1,
-	salary = 85,
+	salary = 120, // We're spanish jijiji
 	admin = 0,
 	vote = true,
-	hasLicense = false,
+	hasLicense = true, // Mayor needs self-defence
 	help = LANGUAGE.mayorhelp
 })
 
-TEAM_HOBO = AddExtraTeam("Hobo", {
+TEAM_HOBO = AddExtraTeam("Vagabundo", {
 	color = Color(80, 45, 0, 255),
 	model = "models/player/corpse1.mdl",
 	description = [[The lowest member of society. All people see you laugh.
@@ -194,7 +194,7 @@ TEAM_HOBO = AddExtraTeam("Hobo", {
 		outside someone else's door]],
 	weapons = {"weapon_bugbait"},
 	command = "hobo",
-	max = 5,
+	max = 4,
 	salary = 0,
 	admin = 0,
 	vote = false,
@@ -202,73 +202,25 @@ TEAM_HOBO = AddExtraTeam("Hobo", {
 	candemote = false
 })
 
-//ADD CUSTOM TEAMS UNDER THIS LINE:
+// Doors
+AddDoorGroup("Solo Fuerzas del Estado", TEAM_CHIEF, TEAM_POLICE, TEAM_SWAT, TEAM_MAYOR)
 
+// Agendas
+AddAgenda("La Agenda", TEAM_MOB, {TEAM_GANG})
+AddAgenda("Boletin Oficial del Estado", TEAM_MAYOR, {TEAM_CHIEF, TEAM_POLICE})
 
-
-
-
-
-
-
-
-/*
---------------------------------------------------------
-HOW TO MAKE A DOOR GROUP
---------------------------------------------------------
-AddDoorGroup("NAME OF THE GROUP HERE, you see this when looking at a door", Team1, Team2, team3, team4, etc.)
-
-WARNING: THE DOOR GROUPS HAVE TO BE UNDER THE TEAMS IN SHARED.LUA. IF THEY ARE NOT, IT MIGHT MUCK UP!
-
-
-The default door groups, can also be used as examples:
-*/
-AddDoorGroup("Cops and Mayor only", TEAM_CHIEF, TEAM_POLICE, TEAM_MAYOR)
-AddDoorGroup("Gundealer only", TEAM_GUN)
-
-
-/*
---------------------------------------------------------
-HOW TO MAKE AN AGENDA
---------------------------------------------------------
-AddAgenda(Title of the agenda, Manager (who edits it), Listeners (the ones who just see and follow the agenda))
-
-WARNING: THE AGENDAS HAVE TO BE UNDER THE TEAMS IN SHARED.LUA. IF THEY ARE NOT, IT MIGHT MUCK UP!
-
-The default agenda's, can also be used as examples:
-*/
-AddAgenda("Gangster's agenda", TEAM_MOB, {TEAM_GANG})
-AddAgenda("Police agenda", TEAM_MAYOR, {TEAM_CHIEF, TEAM_POLICE})
-
-
-/*
----------------------------------------------------------------------------
-HOW TO MAKE A GROUP CHAT
----------------------------------------------------------------------------
-Pick one!
-GAMEMODE:AddGroupChat(List of team variables separated by comma)
-
-or
-
-GAMEMODE:AddGroupChat(a function with ply as argument that returns whether a random player is in one chat group)
-This one is for people who know how to script Lua.
-
-*/
+// Chat groups
 GM:AddGroupChat(function(ply) return ply:IsCP() end)
 GM:AddGroupChat(TEAM_MOB, TEAM_GANG)
 
-/*---------------------------------------------------------------------------
-Define which teams belong to civil protection
-Civil protection can set warrants, make people wanted and do some other police related things
----------------------------------------------------------------------------*/
+// Police team
 GM.CivilProtection = {
 	[TEAM_POLICE] = true,
+	//[TEAM_SWAT] = true,
 	[TEAM_CHIEF] = true,
 	[TEAM_MAYOR] = true,
 }
 
-/*---------------------------------------------------------------------------
-Enable hitman goodies on this team
----------------------------------------------------------------------------*/
+// Hitman goodies
 DarkRP.addHitmanTeam(TEAM_MOB)
 

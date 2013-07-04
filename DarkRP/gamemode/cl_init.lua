@@ -1,6 +1,6 @@
-GM.Version = "2.4.3"
-GM.Name = "DarkRP"
-GM.Author = "By Rickster, Updated: Pcwizdan, Sibre, philxyz, [GNC] Matt, Chrome Bolt, FPtje Falco, Eusion, Drakehawke"
+GM.Version = "4.0.0"
+GM.Name = "SpanishRP"
+GM.Author = "By Team Clon"
 
 DeriveGamemode("sandbox")
 util.PrecacheSound("earthquake.mp3")
@@ -475,7 +475,10 @@ end
 -- Please only ADD to the credits
 -- Removing people from the credits will make at least one person very angry.
 local creds =
-[[LightRP:
+[[SpanishRP:
+Team Clon
+
+LightRP:
 Rick darkalonio
 
 DarkRP:
@@ -484,13 +487,13 @@ Picwizdan
 Sibre
 PhilXYZ
 [GNC] Matt
-Chromebolt A.K.A. unib5 (STEAM_0:1:19045957)
-Falco A.K.A. FPtje (STEAM_0:0:8944068)
-Eusion (STEAM_0:0:20450406)
-Drakehawke (STEAM_0:0:22342869)]]
+Chromebolt A.K.A. unib5
+Falco A.K.A. FPtje
+Eusion
+Drakehawke]]
 
 local function credits(um)
-	chat.AddText(Color(255,0,0,255), "CREDITS FOR DARKRP", Color(0,0,255,255), creds)
+	chat.AddText(Color(255,0,0,255), "CREADORES DEL SPANISHRP", Color(0,0,255,255), creds)
 end
 usermessage.Hook("DarkRP_Credits", credits)
 
@@ -512,17 +515,17 @@ end
 if not FAdmin or not FAdmin.StartHooks then return end
 FAdmin.StartHooks["DarkRP"] = function()
 	-- DarkRP information:
-	FAdmin.ScoreBoard.Player:AddInformation("Steam name", function(ply) return ply:SteamName() end, true)
-	FAdmin.ScoreBoard.Player:AddInformation("Money", function(ply) if LocalPlayer():IsAdmin() and ply.DarkRPVars and ply:getDarkRPVar("money") then return GAMEMODE.Config.currency..formatNumber(ply:getDarkRPVar("money")) end end)
-	FAdmin.ScoreBoard.Player:AddInformation("Wanted", function(ply) if ply.DarkRPVars and ply:getDarkRPVar("wanted") then return tostring(ply.DarkRPVars["wantedReason"] or "N/A") end end)
-	FAdmin.ScoreBoard.Player:AddInformation("Community link", function(ply) return FAdmin.SteamToProfile(ply) end)
-	FAdmin.ScoreBoard.Player:AddInformation("Rank", function(ply) return ply:GetNWString("usergroup") end)
+	FAdmin.ScoreBoard.Player:AddInformation("Nombre Steam", function(ply) return ply:SteamName() end, true)
+	FAdmin.ScoreBoard.Player:AddInformation("Dinero", function(ply) if LocalPlayer():IsAdmin() and ply.DarkRPVars and ply:getDarkRPVar("money") then return GAMEMODE.Config.currency..formatNumber(ply:getDarkRPVar("money")) end end)
+	FAdmin.ScoreBoard.Player:AddInformation("Buscado", function(ply) if ply.DarkRPVars and ply:getDarkRPVar("wanted") then return tostring(ply.DarkRPVars["wantedReason"] or "N/A") end end)
+	FAdmin.ScoreBoard.Player:AddInformation("Enlace de la Comunidad", function(ply) return FAdmin.SteamToProfile(ply) end)
+	FAdmin.ScoreBoard.Player:AddInformation("Rango", function(ply) return ply:GetNWString("usergroup") end)
 
 	-- Warrant
-	FAdmin.ScoreBoard.Player:AddActionButton("Warrant", "FAdmin/icons/Message",	Color(0, 0, 200, 255),
+	FAdmin.ScoreBoard.Player:AddActionButton("Registro", "FAdmin/icons/Message",	Color(0, 0, 200, 255),
 		function(ply) return LocalPlayer():IsCP() end,
 		function(ply, button)
-			Derma_StringRequest("Warrant reason", "Enter the reason for the warrant", "", function(Reason)
+			Derma_StringRequest("Motivo de registro", "Introduzca un motivo para el registro", "", function(Reason)
 				LocalPlayer():ConCommand("darkrp /warrant \"".. ply:SteamID().."\" ".. Reason)
 			end)
 		end)
@@ -536,7 +539,7 @@ FAdmin.StartHooks["DarkRP"] = function()
 		function(ply) local t = LocalPlayer():Team() return t == TEAM_POLICE or t == TEAM_MAYOR or t == TEAM_CHIEF end,
 		function(ply, button)
 			if not ply:getDarkRPVar("wanted")  then
-				Derma_StringRequest("wanted reason", "Enter the reason to arrest this player", "", function(Reason)
+				Derma_StringRequest("Motivo de busca y captura", "Introduzca un motivo para buscar a este jugador", "", function(Reason)
 					LocalPlayer():ConCommand("darkrp /wanted \"".. ply:SteamID().."\" ".. Reason)
 				end)
 			else
@@ -548,7 +551,7 @@ FAdmin.StartHooks["DarkRP"] = function()
 	local function teamban(ply, button)
 		local menu = DermaMenu()
 		local Title = vgui.Create("DLabel")
-		Title:SetText("  Jobs:\n")
+		Title:SetText("  Trabajos:\n")
 		Title:SetFont("UiBold")
 		Title:SizeToContents()
 		Title:SetTextColor(color_black)
@@ -557,20 +560,20 @@ FAdmin.StartHooks["DarkRP"] = function()
 		menu:AddPanel(Title)
 		for k,v in SortedPairsByMemberValue(RPExtraTeams, "name") do
 			local submenu = menu:AddSubMenu(v.name)
-			submenu:AddOption("2 minutes", function() RunConsoleCommand(command, ply:UserID(), k, 120) end)
-			submenu:AddOption("Half an hour", function() RunConsoleCommand(command, ply:UserID(), k, 1800) end)
-			submenu:AddOption("An hour", function() RunConsoleCommand(command, ply:UserID(), k, 3600) end)
-			submenu:AddOption("Until restart", function() RunConsoleCommand(command, ply:UserID(), k, 0) end)
+			submenu:AddOption("2 minutos", function() RunConsoleCommand(command, ply:UserID(), k, 120) end)
+			submenu:AddOption("Hora y media", function() RunConsoleCommand(command, ply:UserID(), k, 1800) end)
+			submenu:AddOption("Una hora", function() RunConsoleCommand(command, ply:UserID(), k, 3600) end)
+			submenu:AddOption("Hasta que reiniciemos", function() RunConsoleCommand(command, ply:UserID(), k, 0) end)
 		end
 		menu:Open()
 	end
-	FAdmin.ScoreBoard.Player:AddActionButton("Ban from job", "FAdmin/icons/changeteam", Color(200, 0, 0, 255),
+	FAdmin.ScoreBoard.Player:AddActionButton("Banear de trabajo", "FAdmin/icons/changeteam", Color(200, 0, 0, 255),
 	function(ply) return FAdmin.Access.PlayerHasPrivilege(LocalPlayer(), "rp_commands", ply) end, teamban)
 
 	local function teamunban(ply, button)
 		local menu = DermaMenu()
 		local Title = vgui.Create("DLabel")
-		Title:SetText("  Jobs:\n")
+		Title:SetText("  Trabajos:\n")
 		Title:SetFont("UiBold")
 		Title:SizeToContents()
 		Title:SetTextColor(color_black)
@@ -582,6 +585,6 @@ FAdmin.StartHooks["DarkRP"] = function()
 		end
 		menu:Open()
 	end
-	FAdmin.ScoreBoard.Player:AddActionButton("Unban from job", function() return "FAdmin/icons/changeteam", "FAdmin/icons/disable" end, Color(200, 0, 0, 255),
+	FAdmin.ScoreBoard.Player:AddActionButton("Eliminar ban de trabajo", function() return "FAdmin/icons/changeteam", "FAdmin/icons/disable" end, Color(200, 0, 0, 255),
 	function(ply) return FAdmin.Access.PlayerHasPrivilege(LocalPlayer(), "rp_commands", ply) end, teamunban)
 end
