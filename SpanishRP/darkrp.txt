@@ -1,0 +1,15 @@
+"darkrp"
+{
+	"base"		"sandbox"
+    "title"  "SpanishRP"
+    "version"   "4.0.0"
+    "menusystem"	"1"
+
+    "author_name"   "FPtje Falco, Team Clon"
+    "author_email"  ""
+    "author_url"    "http://www.team-clon.es/"
+
+    "icon"  ""
+    "info"  ""
+    "hide"  "0"
+}
