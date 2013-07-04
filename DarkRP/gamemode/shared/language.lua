@@ -2,61 +2,18 @@ local rp_languages = {}
 
 // Spanish
 rp_languages.spanish = {
-/*	-- Admin things
-	need_admin = "You need admin privileges in order to be able to %s",
-	need_sadmin = "You need super admin privileges in order to be able to %s",
-	no_jail_pos = "No jail position",
-	invalid_x = "Invalid %s! %s",
-
-	-- F1 menu
-	mouse_wheel_to_scroll = "Use mousewheel to scroll",
-
-	-- Money things:
-	customer_price = "Customer price: ",
-	reset_money = "%s has reset all player's money!",
-	has_given = "%s has given you %s",
-	you_gave = "You gave %s %s",
-	npc_killpay = "%s for killing an NPC!",
-
-	payday_message = "Payday! You received %s!",
-	payday_unemployed = "You received no salary because you are unemployed!",
-	payday_missed = "Pay day missed! (You're Arrested)",
-
-	property_tax = "Property tax! %s",
-	property_tax_cant_afford = "You couldn't pay the taxes! Your property has been taken away from you!",
-
-	-- Players
-	wanted = "Wanted by Police!",
-	youre_arrested = "You have been arrested for %d seconds!",
-	hes_arrested = "%s has been arrested for %d seconds!",
-	hes_unarrested = "%s has been released from jail!",
-	health = "Health: ",
-	job = "Job: ",
-	salary = "Salary: ",
-	wallet = "Wallet: ",
-	warrant_request = "%s requests a search warrant for %s",
-	warrant_request2 = "Search warrant request sent to Mayor %s!",
-	warrant_approved = "Search warrant approved for %s!",
-	warrant_approved2 = "You are now able to search his house.",
-	warrant_denied = "Mayor %s has denied your search warrant request.",
-	warrant_expired = "The search warrant for %s has expired!",
-	wanted_by_police = "%s is wanted by the police!",
-	wanted_expired = "%s is no longer wanted by the Police.",
-	rpname_changed = "%s changed their RPName to: %s",
-	need_admin = "Necesitas privilegios de admin para poder %s",
-*/
-	need_sadmin = "Necesitas privilegios de super admin para poder %s",
-	no_jail_pos = "No hay posicion de carcél",
-	invalid_x = "Inválido %s! %s",
+	need_sadmin = "Necesitas privilegios de superadministrador para poder %s",
+	no_jail_pos = "No hay celdas actualmente",
+	invalid_x = "Invalido %s! %s",
 
 	-- F1 menu
 	mouse_wheel_to_scroll = "Usa la rueda del raton para moverte",
 
 	-- Money things:
-	customer_price = "Precio del cliente: ",
-	reset_money = "%s se ha reseteado todo el dinero de los jugadores!",
-	has_given = "%s se te ha dado %s",
-	you_gave = "Has dado %s %s",
+	customer_price = "Precio: ",
+	reset_money = "%s ha reiniciado todo el dinero de los jugadores!",
+	has_given = "%s te ha dado %s",
+	you_gave = "Has dado %s a %s",
 	npc_killpay = "%s por matar a un NPC!",
 
 	payday_message = "Dia de paga! Has recibido %s!",
@@ -64,39 +21,28 @@ rp_languages.spanish = {
 	payday_missed = "Dia de paga perdido! (Estas arrestado)",
 
 	property_tax = "Impuesto de la propiedad! %s",
-	property_tax_cant_afford = "No puedes pagar los impuestos! Te han quitado la propiedad!",
+	property_tax_cant_afford = "No puedes pagar los impuestos! Te han quitado tu propiedad!",
 
 	-- Players
-	wanted = "Buscado por la Policia",
-	youre_arrested = "Has sido arrestado %d segundos!",
-	hes_arrested = "%s ha sido arrestado %d segundos!",
-	hes_unarrested = "%s ha sido liberado de la cárcel!",
+	wanted = "En busca y captura",
+	youre_arrested = "Has sido arrestado durante %d segundos!",
+	hes_arrested = "%s ha sido arrestado durante %d segundos!",
+	hes_unarrested = "%s ha sido liberado de la carcel!",
 	health = "Vida: ",
 	job = "Trabajo: ",
 	salary = "Salario: ",
 	wallet = "Cartera: ",
-	warrant_request = "%s requiere una orden de registro %s",
-	warrant_request2 = "La orden de registro a sido enviada Alcalde %s!",
-	warrant_approved = "La orden de registro a sido aprovada por %s!",
-	warrant_approved2 = "Ahora puedes registrar la propiedad",
-	warrant_denied = "El alcalde  %s a denegado tu orden de registro",
-	warrant_expired = "La orden de arresto a %s expirado!",
-	wanted_by_police = "%s Esta buscado por la policia!",
-	wanted_expired = "%s ya no esta buscado por la policia",
-	rpname_changed = "%s cambio su nombre de RP por: %s",
-
-
-/* BLOCK 1 END (Mr Patata) YES */
+	warrant_request = "%s requiere una orden de registro para %s",
+	warrant_request2 = "La orden de registro ha sido enviada Alcalde %s!",
+	warrant_approved = "La orden de registro ha sido aprobada por %s!",
+	warrant_approved2 = "Ahora puedes registrar su propiedad.",
+	warrant_denied = "El alcalde %s ha denegado tu orden de registro.",
+	warrant_expired = "La orden de registro para %s ha expirado!",
+	wanted_by_police = "%s se encuentra en busca y captura",
+	wanted_expired = "%s ya no se encuentra en busca y captura",
+	rpname_changed = "%s cambio su nombre por: %s",
 
 /*
-	-- Teams
-	need_to_be_before = "You need to be %s first in order to be able to become %s",
-	need_to_make_vote = "You need to make a vote to become a %s!",
-	team_limit_reached = "Can not become %s as the limit is reached",
-	wants_to_be = "%s\nwants to be\n%s",
-	has_not_been_made_team = "%s has not been made %s!",
-	job_has_become = "%s has been made a %s!",
-
 	-- Disasters
 	zombie_approaching = "WARNING: Zombies are approaching!",
 	zombie_leaving = "Zombies are leaving.",
@@ -139,58 +85,21 @@ rp_languages.spanish = {
 */
 	need_to_be_before = "Necesitas ser %s para ser %s",
 	need_to_make_vote = "Necesitas hacer una votacion para ser %s!",
-	team_limit_reached = "No puedes ser %s el limite se a cumplido",
+	team_limit_reached = "No puedes ser %s porque ya se ha llegado al limite",
 	wants_to_be = "%s\nquiere ser\n%s!",
-	has_not_been_made_team = "%s no a sido %s!",
-	job_has_become = "%s ha sido %s!",
-
-/* BLOCK 2 END (Estutes) NOT */
-
-/*	-- Talking
-	hear_noone = "No-one can hear you %s!",
-	hear_everyone = "Everyone can hear you!",
-	hear_certain_persons = "Players who can hear you %s: ",
-
-	whisper = "whisper",
-	yell = "yell",
-	advert = "[Advert]",
-	radio = "radio",
-	request = "(REQUEST!)",
-	group = "(group)",
-
-	-- Notifies
-	disabled = "%s is disabled! %s",
-	limit = "You have reached the %s limit!",
-	have_to_wait = "You need to wait another %d seconds before using %s!",
-	must_be_looking_at = "You need to be looking at a %s!",
-	incorrect_job = "You do not have the right job to %s",
-	unavailable = "This %s is unavailable",
-	unable = "You are unable to %s. %s",
-	cant_afford = "You can not afford this %s",
-	created_x = "%s created a %s",
-	cleaned_up = "Your %s were cleaned up.",
-	you_bought_x = "You have bought a %s for %s",
-
-	created_first_jailpos = "You have created the first jail position!",
-	added_jailpos = "You have added one extra jail position!",
-	reset_add_jailpos = "You have removed all jail positions and you have added a new one here.",
-	created_spawnpos = "%s's spawn position created.",
-	updated_spawnpos = "%s's spawn position updated.",
-	do_not_own_ent = "You do not own this entity!",
-	cannot_drop_weapon = "Can't drop this weapon!",
-	team_switch = "Jobs switched successfully!",
-*/
+	has_not_been_made_team = "%s no ha podido ser %s!",
+	job_has_become = "%s ha podido ser %s!",
 
 	-- Talking
 	hear_noone = "Nadie puede oirte %s!",
 	hear_everyone = "Todos pueden oirte!",
-	hear_certain_persons = "Jugadores que te oyen %s: ",
+	hear_certain_persons = "Jugadores que te oyen %s:",
 
 	whisper = "susurrar",
 	yell = "gritar",
 	advert = "[Advertencia]",
 	radio = "radio",
-	request = "(PETICIÓN!)",
+	request = "(AYUDA!)",
 	group = "(grupo)",
 
 	-- Notifies
@@ -198,7 +107,7 @@ rp_languages.spanish = {
 	limit = "Has llegado al limite de %s!",
 	have_to_wait = "Necesitas esperar %d antes de usar %s!",
 	must_be_looking_at = "Necesitas mirar a %s!",
-	incorrect_job = "No tienes el trabajo correcto para %s",
+	incorrect_job = "No tienes el trabajo correcto para poder %s",
 	unavailable = "%s no esta disponible",
 	unable = "No puedes %s. %s",
 	cant_afford = "No puedes permitirte un %s",
@@ -206,88 +115,44 @@ rp_languages.spanish = {
 	cleaned_up = "Tus %s han sido limpiados",
 	you_bought_x = "Has comprado un %s por %s",
 
-	created_first_jailpos = "Has creado la primera posicion de carcel!",
-	added_jailpos = "Has agregado una nueva posicion de carcel",
-	reset_add_jailpos = "Has borrado todas las posiciones de cárceles y has puesto una aqui",
+	created_first_jailpos = "Has creado la primera posicion de celdas!",
+	added_jailpos = "Has agregado una nueva posicion de celdas",
+	reset_add_jailpos = "Has borrado todas las posiciones de celdas y has creado una aqui",
 	created_spawnpos = "%s posicion de spawn creada",
 	updated_spawnpos = "%s posicion de spawn actualizada",
 	do_not_own_ent = "No posees este entidad!",
 	cannot_drop_weapon = "No puedes tirar ese arma",
-	team_switch = "Has cambiado el trabajo correctamente",
-
-
-/* BLOCK 3 END (Mr Patata) YES */
-/*
-	-- Misc
-	could_not_find = "Could not find %s",
-	f3tovote = "Hit F3 to vote",
-	listen_up = "Listen up:", -- In rp_tell or rp_tellall
-	nlr = "New Life Rule: Do Not Revenge Arrest/Kill.",
-	reset_settings = "You have reset all settings!",
-	must_be_x = "You must be a %s in order to be able to %s.",
-	agenda_updated = "The agenda has been updated",
-	job_set = "%s has set his/her job to '%s'",
-	demoted = "%s has been demoted",
-	demoted_not = "%s has not been demoted",
-	demote_vote_started = "%s has started a vote for the demotion of %s",
-	demote_vote_text = "Demotion nominee:\n%s", -- '%s' is the reason here
-	lockdown_started = "The mayor has initiated a Lockdown, please return to your homes!",
-	lockdown_ended = "The lockdown has ended",
-	gunlicense_requested = "%s has requested %s a gun license",
-	gunlicense_granted = "%s has granted %s a gun license",
-	gunlicense_denied = "%s has denied %s a gun license",
-	gunlicense_question_text = "Grant %s a gun license?",
-	gunlicense_remove_vote_text = "%s has started a vote for the gun license removal of %s",
-	gunlicense_remove_vote_text2 = "Revoke gunlicense:\n%s", -- Where %s is the reason
-	gunlicense_removed = "%s's license has been removed!",
-	gunlicense_not_removed = "%s's license has not been removed!",
-	vote_specify_reason = "You need to specify a reason!",
-	vote_started = "The vote is created",
-	vote_alone = "You have won the vote since you are alone in the server.",
-	jail_punishment = "Punishment for disconnecting! Jailed for: %d seconds.",
-	admin_only = "Admin only!", -- When doing /addjailpos
-	chief_or = "Chief or",-- When doing /addjailpos
-
-	dead_in_jail = "You now are dead until your jail time is up!",
-	died_in_jail = "%s has died in jail!",
-
-	-- The lottery
-	lottery_started = "There is a lottery! Participate for %s",
-	lottery_entered = "You entered the lottery for %s",
-	lottery_not_entered = "%s did not enter the lottery",
-	lottery_noone_entered = "No-one has entered the lottery",
-	lottery_won = "%s has won the lottery! He has won %s",
-*/
+	team_switch = "Has cambiado de trabajo correctamente",
 
 	-- Misc
-	could_not_find = "No se pudo encontrar %s",
+	could_not_find = "No se pudo encontrar: %s",
 	f3tovote = "Presiona F3 para votar",
-	listen_up = "Escucha:", -- En rp_tell o rp_tellall
-	nlr = "Regla de la Nueva Vida No te venges con arrestar o matar",
-	reset_settings = "Tienes que resetear todos los ajustes!",
-	must_be_x = "Necesitas ser un %s para ser capaz de %s.",
-	agenda_updated = "La agenda a sido actualizada",
+	listen_up = "Atencion:", -- En rp_tell o rp_tellall
+	nlr = "Regla de la Nueva Vida: No te puedes vengar",
+	reset_settings = "Has reiniciado todos los ajustes!",
+	must_be_x = "Necesitas ser %s para ser capaz de %s",
+	agenda_updated = "La agenda ha sido actualizada",
 	job_set = "%s ha cambiado de trabajo a '%s'",
 	demoted = "%s ha sido despedido",
 	demoted_not = "%s no ha sido despedido",
-	demote_vote_started = "%s a empezado una votacion de despido a  %s",
-	demote_vote_text = "A quien quieres despedir:\n%s", -- '%s' la razon aqui
-	lockdown_started = "El alcalde ha iniciado un toque de queda regresen a sus casas!",
-	lockdown_ended = "El toque de queda ha sido finalizado",
-	gunlicense_requested = "%s ha solicitado %s una licencia de armas",
-	gunlicense_granted = "%s le ha dado %s una licencia de armas",
-	gunlicense_denied = "%s ha denegado %s una licencia de armas",
-	gunlicense_question_text = "Le das   %s una licencia de armas?",
-	gunlicense_remove_vote_text = "%s ha iniciado una votacion para quitarle la licencia de armas%s",
-	gunlicense_remove_vote_text2 = "Anulo la licencia de armas:\n%s", -- Aqui  %s  la razon
-	gunlicense_removed = "%s's licencia anulada!",
-	gunlicense_not_removed = "%s's la licencia no ha sido anulada!",
-	vote_specify_reason = "Necesitas especificar una razón!",
+	demote_vote_started = "%s a empezado una votacion de despido para %s",
+	demote_vote_text = "A quien quieres despedir:\n%s", -- %s reason
+	lockdown_started = "El alcalde ha iniciado un toque de queda, regresen a sus casas!",
+	lockdown_ended = "El toque de queda ha finalizado",
+	gunlicense_requested = "%s ha solicitado a %s una licencia de armas",
+	gunlicense_granted = "%s le ha dado a %s una licencia de armas",
+	gunlicense_denied = "%s ha denegado a %s una licencia de armas",
+	gunlicense_question_text = "Dar a %s una licencia de armas?",
+	gunlicense_remove_vote_text = "%s ha iniciado una votacion para quitarle la licencia de armas a %s",
+	gunlicense_remove_vote_text2 = "Eliminar la licencia de armas:\n%s", -- %s is the reason
+	gunlicense_removed = "La licencia de %s ha sido anulada!",
+	gunlicense_not_removed = "La licencia de %s no ha sido anulada!",
+	vote_specify_reason = "Necesitas especificar un motivo!",
 	vote_started = "La votacion a sido iniciada",
 	vote_alone = "Has ganado la votacion porque estas solo en el servidor",
-	jail_punishment = "Castigado por desconectarte! Encerrado for: %d segundos",
-	admin_only = "Solo los admines!", -- Cuando hacen  /addjailpos
-	chief_or = "Jefe o",-- Cuando hacen  /addjailpos
+	jail_punishment = "Castigado por desconectarte! Encerrado durante %d segundos",
+	admin_only = "Solo administradores!", -- When using /addjailpos
+	chief_or = "Jefe o", -- When using /addjailpos
 
 	dead_in_jail = "Estas muerto hasta que el castigo de carcel se haya acabado!",
 	died_in_jail = "%s ha muerto en la carcel",
@@ -296,13 +161,12 @@ rp_languages.spanish = {
 	lottery_started = "Hay una loteria! Participa por  %s",
 	lottery_entered = "Has entrado en la loteria %s",
 	lottery_not_entered = "%s no entro en la loteria",
-	
-
+	lottery_won = "%s ha ganado la loteria, le han tocado %s",
 
 /* BLOCK 4 END (Mr Patata) YES */
 
 	-- Hungermod
-	starving = "Starving!",
+	starving = "Hambriento!",
 
 	-- F4menu
 	-- Tab 1

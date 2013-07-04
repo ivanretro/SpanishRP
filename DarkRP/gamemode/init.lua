@@ -1,6 +1,6 @@
 GM.Version = "4.0.0"
 GM.Name = "SpanishRP"
-GM.Author = "By Team Clon"
+GM.Author = "By Team Clon. Thanks to our collaborators."
 
 -- RP Name Overrides
 
