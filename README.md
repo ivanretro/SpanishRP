@@ -1,4 +1,4 @@
-spanishrp
+SpanishRP 4
 =========
 
-SpanishRP 4 source code. Now we share it!
+This is the SpanishRP 4 source code. Yeah, now we share it!
